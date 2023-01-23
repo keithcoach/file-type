@@ -10,19 +10,13 @@
 		"email": "sindresorhus@gmail.com",
 		"url": "https://sindresorhus.com"
 	},
-	"type": "module",
-	"exports": {
-		".": {
-			"node": "./index.js",
-			"default": "./browser.js"
-		},
-		"./core": "./core.js"
-	},
+	"main": "./common.cjs",
 	"engines": {
 		"node": ">=14.16"
 	},
 	"scripts": {
-		"test": "xo && ava && tsd"
+		"test": "xo && ava && tsd",
+		"build-cjs": "esbuild ./index.js --bundle --platform=node --target=node16 --outfile=./index.cjs"
 	},
 	"files": [
 		"index.js",
@@ -32,7 +26,8 @@
 		"core.js",
 		"core.d.ts",
 		"supported.js",
-		"util.js"
+		"util.js",
+		"index.cjs"
 	],
 	"keywords": [
 		"mime",
@@ -200,6 +195,7 @@
 		"parquet"
 	],
 	"dependencies": {
+		"esbuild": "^0.15.13",
 		"readable-web-to-node-stream": "^3.0.2",
 		"strtok3": "^7.0.0",
 		"token-types": "^5.0.1"
