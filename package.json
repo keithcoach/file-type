@@ -197,7 +197,7 @@
 	"dependencies": {
 		"esbuild": "^0.15.13",
 		"readable-web-to-node-stream": "^3.0.2",
-		"strtok3": "^7.0.0",
+		"strtok3": "github:caoer/strtok3-cjs#master",
 		"token-types": "^5.0.1"
 	},
 	"devDependencies": {
